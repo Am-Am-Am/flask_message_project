@@ -7,3 +7,4 @@
 6. Бэк - flask, pymorphy2
 7. Для запуска нужно установить flask, pymorphy2
 8. Пример использования: http://amamam277.pythonanywhere.com/
+![image](https://github.com/Am-Am-Am/flask_message_project/assets/55045450/481f4fd0-b837-45da-b798-17b2d8f2e9d4)
