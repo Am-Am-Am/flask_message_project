@@ -73,18 +73,11 @@
           placeholder="Время проведения"
           name="date"
         />
-        <input
-          class="form-control"
-          type="welcome"
-          placeholder="1 - Доброе утро! / 2 - Добрый день! / 3 - Добрый вечер!"
-          name="welcome"
-        />
         <button class="btn btn-primary" type="submit">Выбрать</button>
       </form>
       <div class="result">
         {% if message %}
         <textarea id="message_done">{{message}}</textarea>
-        <!-- <input type="textarea" value="{{message}}" id="message_done" /> -->
         {% endif %}
         <button onclick="copy()" class="btn btn-success">Копировать</button>
       </div>

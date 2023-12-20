@@ -1,32 +1,31 @@
 from flask import Flask, render_template, request 
 import pymorphy2
+import datetime
 
 app = Flask(__name__)
 
-#Результаты формы
 @app.route('/', methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        # получаем выбранное изображение
         morph = pymorphy2.MorphAnalyzer()
         name = request.form.get('name')
         date = request.form.get('date')
-        welcome = request.form.get('welcome')
+        welcome = ''
         name = morph.parse(name)[0]
-
         correct_name = name.inflect({'ablt'})
+        current_time = datetime.datetime.now().time()
 
-        if welcome == '1':
+        if current_time > datetime.time(4, 0) and current_time < datetime.time(12, 0):
             welcome = 'Доброе утро!'
-        elif welcome == '2':
+        elif current_time >= datetime.time(12, 0) and current_time < datetime.time(18, 0):
             welcome = 'Добрый день!'
-        elif welcome == '3':
+        else:
             welcome = 'Добрый вечер!'
-        message = f'{welcome} Меня зовут Амур, я преподаватель из школы программирования Kodland. Нам с {correct_name.word.capitalize()} назначили дополнительный урок для определения дальнейшего курса обучения. Время проведения: {date}.'
+
+        message = f'{welcome} Меня зовут Амур, я преподаватель из школы программирования Kodland. Нам с {correct_name.word.capitalize()} назначили дополнительный экспертный урок для определения дальнейшего курса обучения. Время проведения: {date}.'
 
         return render_template('index.html', message=message)
     else:
-        # отображаем первое изображение по умолчанию
         return render_template('index.html')
 
 
