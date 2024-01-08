@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request 
+from flask import Flask, render_template, request
 import pymorphy2
 import datetime
 
@@ -15,9 +15,9 @@ def index():
         correct_name = name.inflect({'ablt'})
         current_time = datetime.datetime.now().time()
 
-        if current_time > datetime.time(4, 0) and current_time < datetime.time(12, 0):
+        if current_time > datetime.time(1, 0) and current_time < datetime.time(9, 0):
             welcome = 'Доброе утро!'
-        elif current_time >= datetime.time(12, 0) and current_time < datetime.time(18, 0):
+        elif current_time >= datetime.time(9, 0) and current_time < datetime.time(13, 0):
             welcome = 'Добрый день!'
         else:
             welcome = 'Добрый вечер!'
@@ -31,4 +31,4 @@ def index():
 
 
 
-app.run()
+# app.run()
