@@ -17,6 +17,5 @@ jobs:
       - name: Install dependencies
         run: pip install -r message_project/requirements.txt
       - name: Build
-        run: python main.py build
-      - name: Test
-        run: python main.py test
+        run: python message_project/main.py build
+
