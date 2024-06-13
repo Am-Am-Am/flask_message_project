@@ -31,4 +31,4 @@ def index():
 
 
 
-# app.run()
+app.run()
