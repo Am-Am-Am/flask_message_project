@@ -26,9 +26,11 @@ jobs:
         #   sudo cp -R ./.github/gh-pages/history/* allure-results/history/
       - name: Generate Allure report
         run: |
+          cd message_project
           sudo docker-compose run regression /bin/sh -c "allure generate allure-results --clean -o allure-report"
       - name: Update Allure history
         run: |
+          cd message_project
           sudo cp -R allure-report/history/* ./.github/gh-pages/history/
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
