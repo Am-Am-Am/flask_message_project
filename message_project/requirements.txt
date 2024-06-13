@@ -1,3 +1,0 @@
-pymorphy2
-flask
-
