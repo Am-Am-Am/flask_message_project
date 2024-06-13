@@ -8,27 +8,7 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
-    name: main
-
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-
-    name: main
-
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-
-    steps:
+   steps:
       - uses: actions/checkout@v2
 
       - name: Checkout (copy) gh-pages repository to GitHub runner
@@ -38,6 +18,7 @@ jobs:
           path: ./.github/gh-pages
 
       - name: Run UI-tests via docker-compose
+      
         run: |
           cd message_project
           docker-compose up --exit-code-from regression || true
@@ -62,8 +43,4 @@ jobs:
           branch: gh-pages
           folder: allure-report
           clean: true
-
-
-
-
 
