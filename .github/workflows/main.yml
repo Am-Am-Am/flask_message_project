@@ -20,17 +20,17 @@ jobs:
         run: |
           cd message_project
           docker-compose up --exit-code-from regression || true
-      - name: Copy history from gh-pages to allure-results
-        run: |
-          sudo mkdir -p message_project/allure-results/history  # Создает директорию для истории Allure
-          sudo cp -r ./.github/gh-pages/history/* message_project/allure-results/history/
-      - name: Generate Allure report
-        run: |
-          cd message_project
-          sudo docker-compose run regression /bin/sh -c "allure generate allure-results --clean -o allure-report"
-      - name: Update Allure history
-        run: |
-          sudo cp -r ./.github/gh-pages/history/* allure-results/history/
+      # - name: Copy history from gh-pages to allure-results
+      #   run: |
+      #     sudo mkdir -p message_project/allure-results/history  # Создает директорию для истории Allure
+      #     sudo cp -r ./.github/gh-pages/history/* message_project/allure-results/history/
+      # - name: Generate Allure report
+      #   run: |
+      #     cd message_project
+      #     sudo docker-compose run regression /bin/sh -c "allure generate allure-results --clean -o allure-report"
+      # - name: Update Allure history
+      #   run: |
+      #     sudo cp -r ./.github/gh-pages/history/* allure-results/history/
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
