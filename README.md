@@ -6,7 +6,7 @@
 5. Фронт сделан с помощью Bootstrap и является адаптивным
 6. Бэк - flask, pymorphy2
 7. Команда для установки всех необходимых пакетов: pip install -r requirements.txt
-8. Ссылка для использования: http://amamam.pythonanywhere.com/
+8. Ссылка для использования: http://amamam277.pythonanywhere.com/
 
    
 ![image](https://github.com/Am-Am-Am/flask_message_project/assets/55045450/481f4fd0-b837-45da-b798-17b2d8f2e9d4)
